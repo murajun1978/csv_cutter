@@ -8,7 +8,7 @@ module CsvSplitter
     desc 'split_by_number_rows', 'split csv by number rows'
     method_options headers: :boolean, encoding: :string, col_sep: :string, quote_char: :string, number_rows: :numeric
     def split_by_number_rows(file_path, out_dir)
-      symbolized_key_options = options.keys.inject({}) do |new_options, key|
+      symbolized_key_options = options.except('number_rows').keys.inject({}) do |new_options, key|
         new_options[key.to_sym] = options[key]
         new_options
       end
