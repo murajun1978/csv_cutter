@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-require 'csv_splitter'
+require 'csv_cutter'
 require 'thor'
 
-module CsvSplitter
+module CsvCutter
   class CLI < Thor
     desc 'split_by_number_rows', 'split csv by number rows'
     method_options headers: :boolean, encoding: :string, col_sep: :string, quote_char: :string, number_rows: :numeric
@@ -13,8 +13,8 @@ module CsvSplitter
         new_options
       end
 
-      splitter = CsvSplitter::Splitter.new(**symbolized_key_options.merge(out_dir: out_dir))
-      splitter.split_by_number_rows(file_path: file_path, number_rows: options['number_rows'] || 10000)
+      csv = CsvCutter::Csv.new(**symbolized_key_options.merge(out_dir: out_dir))
+      csv.split_by_number_rows(file_path: file_path, number_rows: options['number_rows'] || 10000)
 
       puts 'Successfully split csv.'
     end

@@ -2,8 +2,8 @@
 
 require 'csv'
 
-module CsvSplitter
-  class Splitter
+module CsvCutter
+  class Csv
     attr_reader :options, :out_dir, :file_mode
 
     def initialize(headers: false, out_dir:, encoding: nil, col_sep: ',', quote_char: '"')
