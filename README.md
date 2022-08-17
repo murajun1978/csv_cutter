@@ -22,7 +22,34 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+### For Ruby
+
+```ruby
+splitter = CsvSplitter::Splitter.new(
+  headers: true,
+  encoding: 'Shift_JIS:UTF-8',
+  col_sep: ',',
+  quote_char: '"',
+  out_dir: 'output_dir',
+)
+splitter.split_by_number_rows(file_path: 'file.csv', number_rows: 100)
+```
+
+### For CLI
+
+```ruby
+csv_split split_by_number_rows sample.csv output_dir --headers --encoding Shift_JIS:UTF-8 --col_sep , --quote_char '"' --number_rows 100
+```
+
+### Options
+|option name|type|description|default_value|
+|---|---|---|---|
+|headers|boolean|Header flag|false|
+|encoding|string|CSV encording|-|
+|col_sep|string|Column separate char|`,`|
+|quote_char|string|Quote char|`"`|
+|out_dir|string|Output directory|required|
+|number_rows|number|split number rows|10000|
 
 ## Development
 
