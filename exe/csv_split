@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require 'csv_splitter/cli'
+
+CsvSplitter::CLI.start(ARGV)
