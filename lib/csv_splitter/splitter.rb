@@ -27,7 +27,7 @@ module CsvSplitter
             rows.each_with_index do |row, idx|
               case row
               when CSV::Row
-                csv_file << row.headers if idx == 0 && row.is_a?(CSV::Row)
+                csv_file << row.headers if idx == 0
                 csv_file << row.fields
               else
                 csv_file << row
