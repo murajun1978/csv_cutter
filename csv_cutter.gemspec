@@ -1,22 +1,22 @@
 # frozen_string_literal: true
 
-require_relative "lib/csv_splitter/version"
+require_relative "lib/csv_cutter/version"
 
 Gem::Specification.new do |spec|
-  spec.name = "csv_splitter"
-  spec.version = CsvSplitter::VERSION
+  spec.name = "csv_cutter"
+  spec.version = CsvCutter::VERSION
   spec.authors = ["murajun1978"]
   spec.email = [""]
 
   spec.summary = "A gem for splitting CSV files"
-  spec.description = "CsvSplitter is a gem for splitting CSV files"
-  spec.homepage = "https://github.com/murajun1978/csv_splitter"
+  spec.description = "CsvCutter is a gem for splitting CSV files"
+  spec.homepage = "https://github.com/murajun1978/csv_cutter"
   spec.license = "MIT"
   spec.required_ruby_version = ">= 2.6.0"
 
   spec.metadata["homepage_uri"] = spec.homepage
-  spec.metadata["source_code_uri"] = "https://github.com/murajun1978/csv_splitter"
-  spec.metadata["changelog_uri"] = "https://github.com/murajun1978/csv_splitter/blob/main/CHANGELOG.md"
+  spec.metadata["source_code_uri"] = "https://github.com/murajun1978/csv_cutter"
+  spec.metadata["changelog_uri"] = "https://github.com/murajun1978/csv_cutter/blob/main/CHANGELOG.md"
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.

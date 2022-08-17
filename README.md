@@ -1,6 +1,6 @@
-# CsvSplitter
+# CsvCutter
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/csv_splitter`. To experiment with that code, run `bin/console` for an interactive prompt.
+Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/csv_cutter`. To experiment with that code, run `bin/console` for an interactive prompt.
 
 TODO: Delete this and the text above, and describe your gem
 
@@ -9,7 +9,7 @@ TODO: Delete this and the text above, and describe your gem
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'csv_splitter'
+gem 'csv_cutter'
 ```
 
 And then execute:
@@ -18,27 +18,27 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install csv_splitter
+    $ gem install csv_cutter
 
 ## Usage
 
 ### For Ruby
 
 ```ruby
-splitter = CsvSplitter::Splitter.new(
+csv = CsvCutter::Csv.new(
   headers: true,
   encoding: 'Shift_JIS:UTF-8',
   col_sep: ',',
   quote_char: '"',
   out_dir: 'output_dir',
 )
-splitter.split_by_number_rows(file_path: 'file.csv', number_rows: 100)
+csv.split_by_number_rows(file_path: 'file.csv', number_rows: 100)
 ```
 
 ### For CLI
 
 ```ruby
-csv_split split_by_number_rows sample.csv output_dir --headers --encoding Shift_JIS:UTF-8 --col_sep , --quote_char '"' --number_rows 100
+csv_cutter split_by_number_rows sample.csv output_dir --headers --encoding Shift_JIS:UTF-8 --col_sep , --quote_char '"' --number_rows 100
 ```
 
 ### Options
@@ -59,7 +59,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/csv_splitter.
+Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/csv_cutter.
 
 ## License
 
