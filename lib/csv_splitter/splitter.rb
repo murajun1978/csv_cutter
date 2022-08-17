@@ -25,8 +25,13 @@ module CsvSplitter
         threads << Thread.new(idx) do |idx|
           CSV.open("#{out_dir}/#{file_name}_#{idx}.csv", file_mode, **options.slice(:col_sep, :quote_char)) do |csv_file|
             rows.each_with_index do |row, idx|
-              csv_file << row.headers if idx == 0 && row.is_a?(CSV::Row)
-              csv_file << row.fields
+              case row
+              when CSV::Row
+                csv_file << row.headers if idx == 0 && row.is_a?(CSV::Row)
+                csv_file << row.fields
+              else
+                csv_file << row
+              end
             end
           end
         end
